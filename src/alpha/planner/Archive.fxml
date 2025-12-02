@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="921.0" prefWidth="1216.0" style="-fx-font-weight: bold; -fx-font-family: 'Cairo SemiBold';" stylesheets="@cupertino-light.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.ArchiveController">
+   <center>
+      <TableView fx:id="table" prefHeight="892.0" prefWidth="1216.0" tableMenuButtonVisible="true" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="1216.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="refresh" fitHeight="25.0" fitWidth="25.0" layoutX="208.0" layoutY="17.0" onMouseClicked="#refaction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@refresho.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label text="تحديث" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#resaction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@folder-restore.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label text="استعادة" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="51.0" layoutY="10.0" onMouseClicked="#delaction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@delete%20(2).png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label text="حذف للأبد" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="92.0" layoutY="10.0" onMouseClicked="#exaction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@share-arrow.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Label text="تصدير" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+         </children>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXProgressSpinner?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="897.0" prefWidth="1217.0" style="-fx-font-weight: bold; -fx-font-size: 15; -fx-background-color: #f8f9fa; -fx-font-family: &quot;Cairo SemiBold&quot;;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.AddOrderController">
+
+   <!-- ======= TOP RIBBON ======= -->
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-padding: 10;">
+         <padding>
+            <Insets bottom="10" left="20" right="20" top="10" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="233.0" spacing="15.0" style="-fx-background-color: #ced4da;">
+               <children>
+                  <JFXButton fx:id="seto" buttonType="RAISED" onAction="#settingsaction" style="-fx-background-color: transparent;" styleClass="settings" stylesheets="@All_CSS.css">
+                     <tooltip>
+                        <Tooltip text="افتح الأعدادات">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton onAction="#spellaction" style="-fx-background-color: transparent;" styleClass="spell" stylesheets="@All_CSS.css">
+                     <tooltip>
+                        <Tooltip text="تصحيح أسماء الريسيبي">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="refreshh" onAction="#refreshhaction" style="-fx-background-color: transparent;" styleClass="refreshh" stylesheets="@All_CSS.css">
+                     <tooltip>
+                        <Tooltip text="تحديث الصفحة">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton onAction="#updateeaction" style="-fx-background-color: transparent;" styleClass="updatee" stylesheets="@All_CSS.css">
+                     <tooltip>
+                        <Tooltip text="تحديث قاعدة البيانات">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton onAction="#deleteeaction" style="-fx-background-color: transparent;" styleClass="deletee" stylesheets="@All_CSS.css">
+                     <tooltip>
+                        <Tooltip text="حذف أوردر">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="8.0" prefWidth="191.0" spacing="15.0" style="-fx-background-color: #f5ebe0;">
+               <children>
+                  <JFXButton onAction="#filterraction" style="-fx-background-color: transparent;" styleClass="filterr" stylesheets="@All_CSS.css">
+                     <tooltip>
+                        <Tooltip text="تصفية العناصر من خلال الفلتر">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton onAction="#processessaction" style="-fx-background-color: transparent;" styleClass="processess" stylesheets="@All_CSS.css">
+                     <tooltip>
+                        <Tooltip text="عرض مراحل الريسيبي في الجدول">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="archive" onAction="#archiveaction" style="-fx-background-color: transparent;" styleClass="archive" stylesheets="@All_CSS.css">
+                     <tooltip>
+                        <Tooltip text="أرشيف الأوردرات">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#excelaction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@excel.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="72.0" spacing="15.0" style="-fx-background-color: #d5bdaf;">
+               <children>
+                  <ImageView fx:id="messenger" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#messengeraction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@messenger.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="inbox" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#inboxaction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@mail.png" />
+                     </image>
+                  </ImageView>
+               </children></HBox>
+            <JFXButton fx:id="logout" onAction="#logoutaction" style="-fx-background-color: transparent;" styleClass="logouttt" stylesheets="@All_CSS.css" />
+         </children>
+      </HBox>
+   </top>
+
+   <!-- ======= CENTER SPLIT ======= -->
+   <center>
+      <SplitPane dividerPositions="0.2765432098765432" style="-fx-font-family: &quot;Cairo SemiBold&quot;;">
+         <items>
+            <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-font-family: &quot;Cairo SemiBold&quot;;">
+               <children>
+                  <!-- LEFT FORM -->
+                  <VBox alignment="TOP_CENTER" spacing="15" style="-fx-background-color: #ffffff; -fx-background-radius: 10;">
+                     <padding>
+                        <Insets bottom="15" left="15" right="15" top="15" />
+                     </padding>
+                     <children>
+                        <Accordion prefHeight="780.0" style="-fx-background-color: transparent;">
+                           <panes>
+                              <!-- Manual Order -->
+                              <TitledPane expanded="true" style="-fx-font-weight: bold; -fx-background-color: #e9ecef; -fx-font-family: Cairo SemiBold;" text="📝 أوردر ب أوردر">
+                                 <content>
+                                    <HBox alignment="CENTER" spacing="20" style="-fx-font-family: Cairo SemiBold;">
+                                       <children>
+                                          <VBox spacing="20">
+                                             <MFXTextField fx:id="po" floatingText="PO" prefHeight="56.0" prefWidth="130.0" />
+                                             <MFXTextField fx:id="sapcode" floatingText="Sap Code" prefHeight="56.0" prefWidth="130.0" />
+                                             <MFXTextField fx:id="style" floatingText="Style" prefHeight="56.0" prefWidth="130.0" />
+                                             <MFXTextField fx:id="customer" floatingText="Customer" prefHeight="56.0" prefWidth="130.0" />
+                                             <MFXTextField fx:id="washname" floatingText="Wash Name" prefHeight="56.0" prefWidth="130.0" />
+                                          </VBox>
+                                          <VBox spacing="20">
+                                             <MFXTextField fx:id="poamount" floatingText="PO Amount" prefHeight="56.0" prefWidth="130.0" />
+                                             <MFXTextField fx:id="cuttingamount" floatingText="Cutting Amount" prefHeight="56.0" prefWidth="130.0" />
+                                             <MFXDatePicker fx:id="laundrydate" prefHeight="38.0" prefWidth="175.0" promptText="Incoming Date" />
+                                             <MFXDatePicker prefHeight="38.0" prefWidth="175.0" promptText="X Fac Date" fx:id="xfacdate" />
+                                             <MFXButton fx:id="addorder" onAction="#addorderaction" style="-fx-background-color: #2a9d8f; -fx-text-fill: white; -fx-background-radius: 20;" text="➕ Add Order" />
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </content>
+                              </TitledPane>
+            
+                              <!-- Order From Excel Row -->
+                              <TitledPane style="-fx-font-family: Cairo SemiBold;" text="📑 أوردر من الأكسيل">
+                                 <content>
+                                    <VBox alignment="CENTER" spacing="20" style="-fx-font-family: Cairo SemiBold;">
+                                       <Label text="اختر ملف إكسيل يحتوي على بيانات الأوردر" />
+                                       <HBox alignment="CENTER" spacing="15">
+                                          <ImageView fx:id="excel" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#exceliconaction" preserveRatio="true">
+                                             <image>
+                                                <Image url="@excel.png" />
+                                             </image>
+                                          </ImageView>
+                                          <MFXTextField fx:id="excelcell" floatingText="Row Number..." onKeyReleased="#excelcellrel" prefHeight="32.0" prefWidth="328.0" />
+                                       </HBox>
+                                       <Label fx:id="excelpathlabel" text="Excel File Path..." />
+                                       <Label style="-fx-text-fill: #fb5607;" text="⚠️ راجع البيانات قبل الضغط على Add Order" />
+                                       <Label fx:id="excellink" layoutX="104.0" layoutY="381.0" text="Excel File Path..." visible="false" />
+                                    </VBox>
+                                 </content>
+                              </TitledPane>
+            
+                              <!-- Bulk Excel -->
+                              <TitledPane style="-fx-font-family: Cairo SemiBold;" text="📂 الداتا كلها دفعة واحدة">
+                                 <content>
+                                    <VBox alignment="CENTER" spacing="20" style="-fx-font-family: Cairo SemiBold;">
+                                       <Label style="-fx-text-fill: #e63946;" text="اختر ملف إكسيل لسحب كل الأوردرات مرة واحدة" />
+                                       <HBox alignment="CENTER" spacing="15">
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" preserveRatio="true">
+                                             <image>
+                                                <Image url="@excel.png" />
+                                             </image>
+                                          </ImageView>
+                                          <MFXTextField fx:id="excelpathtf" editable="false" floatingText="Excel File Path..." prefHeight="56.0" prefWidth="233.0" />
+                                          <MFXButton fx:id="browse" onAction="#browseaction" style="-fx-background-color: #4da3ff; -fx-text-fill: white; -fx-background-radius: 20;" text="📂 Browse" />
+                                       </HBox>
+                                       <MFXButton fx:id="writedata" onAction="#writedataaction" style="-fx-background-color: #2a9d8f; -fx-text-fill: white; -fx-background-radius: 20;" text="💾 Write Data" />
+                                    </VBox>
+                                 </content>
+                              </TitledPane>
+                           </panes>
+                        </Accordion>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="wait" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" visible="false">
+                     <children>
+                        <MFXProgressSpinner prefHeight="144.0" prefWidth="149.0" />
+                        <Text fontSmoothingType="LCD" stroke="#4a4444" strokeType="OUTSIDE" strokeWidth="0.0" text="جاري التحميل لو سمحت استني" />
+                     </children>
+                  </VBox>
+               </children>
+            </StackPane>
+
+            <!-- RIGHT TABLE + SIDE PANEL -->
+            <StackPane>
+               <children>
+                  <TableView fx:id="table" prefHeight="812.0" prefWidth="907.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-font-family: Cairo SemiBold;" tableMenuButtonVisible="true" />
+
+                  <SplitPane fx:id="mainSplit1" style="-fx-background-color: #edf2fb;" visible="false">
+                     <items>
+                        <VBox fx:id="sidePanel1" spacing="10" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-padding: 15;">
+                           <children>
+                              <Label style="-fx-font-weight: bold;" text="📨 صندوق الرسائل" />
+                              <Label style="-fx-font-size: 12;" text="⚠️ أي رسالة ستبقى حتى إغلاق البرنامج أو تسجيل خروج" wrapText="true" />
+                              <ScrollPane fitToWidth="true">
+                                 <content>
+                                    <VBox fx:id="shipmentList1" spacing="10" />
+                                 </content>
+                              </ScrollPane>
+                              <HBox alignment="CENTER_RIGHT">
+                                 <Button onAction="#closepanel" style="-fx-background-color: #3c096c; -fx-text-fill: white; -fx-background-radius: 20;" text="✖️ اغلاق" />
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </items>
+                  </SplitPane>
+               </children>
+            </StackPane>
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>

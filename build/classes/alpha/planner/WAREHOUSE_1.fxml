@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane prefHeight="820" prefWidth="1300" style="-fx-font-family: &quot;Cairo SemiBold&quot;;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.WAREHOUSE_1_Controller">
+
+   <!-- =================== TOP MENU =================== -->
+   <top>
+      <MenuBar fx:id="menubar" style="-fx-font-weight: bold; -fx-font-size: 13px;">
+         <menus>
+            <!-- ملف -->
+            <Menu fx:id="fill" text="ملف">
+               <items>
+                  <MenuItem fx:id="refresh" onAction="#refreshaction" text="تحديث 🔄" visible="false" />
+                  <MenuItem fx:id="addorder" onAction="#addorderaction" text="اضافة أوردر جديد" visible="false" />
+                  <MenuItem fx:id="updateorder" onAction="#editorderaction" text="تحديث البيانات" visible="false" />
+                  <MenuItem fx:id="deleteorder" onAction="#deleteorderaction" text="حذف أوردر" visible="false" />
+                  <MenuItem onAction="#settingsaction" text="الإعدادات ⚙️" />
+                  <SeparatorMenuItem />
+                  <Menu text="تصدير الي 📤">
+                     <items>
+                        <MenuItem onAction="#pdfaction" text="ملف PDF 📄" />
+                        <SeparatorMenuItem />
+                        <MenuItem onAction="#excelaction" text="ملف Excel 📊" />
+                     </items>
+                  </Menu>
+                  <SeparatorMenuItem />
+                  <MenuItem fx:id="stocky" onAction="#stockyaction" text="كمية المخزون 📦" />
+                  <SeparatorMenuItem />
+                  <MenuItem onAction="#quitaction" text="خروج ⏻" />
+               </items>
+            </Menu>
+
+            <!-- الشحنات -->
+            <Menu fx:id="ships" text="الشحنات">
+               <items>
+                  <Menu text="تحديد مسار وارسال الشحنة 🚚">
+                     <items>
+                        <MenuItem onAction="#shipmentpathaction1" text="يدوي ✋" />
+                        <MenuItem fx:id="rec" onAction="#shipmentpathaction2" text="من الريسيبي 📜" />
+                     </items>
+                  </Menu>
+                  <MenuItem onAction="#trackshipmentaction" text="تتبع الشحنات 📍" />
+                  <MenuItem onAction="#refshipsaction" text="الشحنات المرفوضة ❌📦" />
+               </items>
+            </Menu>
+
+            <!-- مساعدة -->
+            <Menu fx:id="hel" text="مساعدة">
+               <items>
+                  <MenuItem onAction="#creditsaction" text="فريق العمل 👥" />
+                  <SeparatorMenuItem />
+                  <MenuItem onAction="#aboutaction" text="عن ℹ" />
+                  <SeparatorMenuItem />
+                  <MenuItem onAction="#logoutaction" style="-fx-text-fill: red;" text="تسجيل الخروج 🚪" />
+               </items>
+            </Menu>
+
+            <!-- المستخدمون -->
+            <Menu fx:id="onlineusersmenu" text="المستخدمون النشطون" />
+         </menus>
+      </MenuBar>
+   </top>
+
+   <!-- =================== CENTER =================== -->
+   <center>
+      <BorderPane>
+         <!-- Table -->
+         <center>
+            <StackPane>
+               <TableView fx:id="table" onMouseClicked="#tableaction" prefHeight="664" prefWidth="1229" style="-fx-font-weight: bold; -fx-font-size: 13px;" tableMenuButtonVisible="true" />
+
+               <!-- Side Panel (رسائل) -->
+               <SplitPane fx:id="mainSplit1" style="-fx-background-color: #f8f9fa;" visible="false">
+                  <items>
+                     <VBox fx:id="sidePanel1" spacing="10" style="-fx-padding: 15;">
+                        <children>
+                           <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="صندوق الرسائل" />
+                           <Label style="-fx-font-size: 12px; -fx-text-fill: #555;" text="أي رسالة توصلك ستظل هنا حتى تغلق البرنامج أو تسجل خروج. عندها سيتم مسح كل شيء." wrapText="true" />
+                           <ScrollPane fitToWidth="true" prefHeight="600">
+                              <content>
+                                 <VBox fx:id="shipmentList1" spacing="10" />
+                              </content>
+                           </ScrollPane>
+                           <HBox alignment="CENTER_RIGHT">
+                              <Button onAction="#closepanel" style="-fx-background-color: #3c096c; -fx-text-fill: white; -fx-background-radius: 20; -fx-font-weight: bold;" text="إغلاق">
+                                 <cursor><Cursor fx:constant="HAND" /></cursor>
+                              </Button>
+                           </HBox>
+                        </children>
+                     </VBox>
+                  </items>
+               </SplitPane>
+               <HBox fx:id="wait" alignment="CENTER" opacity="0.61" prefHeight="100.0" prefWidth="200.0" spacing="15.0" style="-fx-background-color: #e0e1dd;" visible="false">
+                  <children>
+                     <JFXSpinner />
+                     <Label text="جاري تحميل المراحل ... برجاء الانتظار" />
+                  </children>
+               </HBox>
+            </StackPane>
+         </center>
+
+         <!-- Bottom (Hidden TextArea) -->
+         <bottom>
+            <HBox alignment="CENTER_LEFT" spacing="25" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTextArea fx:id="orderarea" prefHeight="0.0" prefWidth="52.0" visible="false" />
+               </children>
+               <padding><Insets left="20" /></padding>
+            </HBox>
+         </bottom>
+
+         <!-- Toolbar -->
+         <top>
+            <ToolBar fx:id="buttonbar" prefHeight="50">
+               <items>
+                  <StackPane prefHeight="27.0" prefWidth="64.0">
+                     <children>
+                        <Circle fill="#d2dae1" radius="25.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" />
+                        <ImageView fx:id="avatar" fitHeight="48.0" fitWidth="48.0" onMouseClicked="#avataraction" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@user.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow color="#00000066" radius="10" />
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <JFXButton fx:id="lllo" onAction="#llloaction" style="-fx-font-weight: bold;" styleClass="path" stylesheets="@All_CSS.css" text="حدد مسار أوردر وابعثه" />
+                  <JFXButton fx:id="gotowh1" onAction="#gotowh1action" style="-fx-font-weight: bold;" styleClass="warehousee" stylesheets="@All_CSS.css" text="الذهاب إلى المخزن" />
+                  <Separator orientation="VERTICAL" />
+                  <JFXButton fx:id="backtoorders" onAction="#backtoordersaction" style="-fx-font-weight: bold;" styleClass="orders" stylesheets="@All_CSS.css" text="الذهاب إلى الأوردرات" />
+                  <JFXButton fx:id="sendtowh1" onAction="#sendtowh1action" style="-fx-font-weight: bold;" styleClass="sending" stylesheets="@All_CSS.css" text="إرسال المنتج للمخزن" />
+                  <Separator orientation="VERTICAL" />
+                  <JFXButton fx:id="momo" onAction="#autodelete" styleClass="autodelete" stylesheets="@All_CSS.css" />
+                  <JFXButton onAction="#messengeraction" styleClass="messenger" stylesheets="@All_CSS.css" />
+                  <JFXButton fx:id="inbox" onAction="#inboxaction" styleClass="inbox" stylesheets="@All_CSS.css" />
+                  <JFXButton onAction="#proproaction" styleClass="processo" stylesheets="@All_CSS.css" />
+                  <MFXButton fx:id="clearsel" onAction="#clearselectionaction" style="-fx-background-radius: 20; -fx-background-color: #2a9d8f; -fx-font-weight: bold;" text="Clear Selection" visible="false" />
+                  <!-- Hidden controls -->
+                  <Label fx:id="ref" onMouseClicked="#refaction" styleClass="refresh" stylesheets="@All_CSS.css" visible="false" />
+                  <Label fx:id="upd" onMouseClicked="#updaction" styleClass="update" stylesheets="@All_CSS.css" visible="false" />
+                  <Label fx:id="add" onMouseClicked="#addaction" styleClass="addorder" stylesheets="@All_CSS.css" visible="false" />
+                  <Label fx:id="fil" onMouseClicked="#filaction" styleClass="filter" stylesheets="@All_CSS.css" visible="false" />
+                  <Label fx:id="del" onMouseClicked="#delaction" styleClass="delete" stylesheets="@All_CSS.css" visible="false" />
+                  <!-- Hidden TextFields -->
+                  <JFXTextField fx:id="po" visible="false" />
+                  <JFXTextField fx:id="sapcode" visible="false" />
+                  <JFXTextField fx:id="style" visible="false" />
+                  <JFXTextField fx:id="customer" visible="false" />
+                  <JFXTextField fx:id="washname" visible="false" />
+                  <JFXTextField fx:id="poamount" visible="false" />
+                  <JFXTextField fx:id="cuttingamount" visible="false" />
+                  <JFXTextField fx:id="laundrydate" visible="false" />
+                  <JFXTextField visible="false" fx:id="xfacdate" />
+               </items>
+            </ToolBar>
+         </top>
+      </BorderPane>
+   </center>
+
+   <!-- =================== STYLES =================== -->
+   <stylesheets>
+      <URL value="@All_CSS.css" />
+      <URL value="@cupertino-light.css" />
+   </stylesheets>
+</BorderPane>

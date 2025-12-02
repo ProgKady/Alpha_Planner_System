@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="904.0" prefWidth="1292.0" style="-fx-font-family: &quot;Cairo SemiBold&quot;;" stylesheets="@cupertino-light.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.Finalize_a_shipment_Controller">
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table" prefHeight="677.0" prefWidth="1230.0" style="-fx-font-weight: bold; -fx-font-size: 12;" tableMenuButtonVisible="true" />
+            <Pane prefHeight="210.0" prefWidth="1272.0">
+               <children>
+                  <JFXTextField fx:id="po" alignment="CENTER" editable="false" labelFloat="true" layoutX="20.0" layoutY="28.0" prefHeight="32.0" prefWidth="143.0" promptText="PO" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="sapcode" alignment="CENTER" editable="false" labelFloat="true" layoutX="225.0" layoutY="28.0" prefHeight="32.0" prefWidth="143.0" promptText="Sap Code" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="customer" alignment="CENTER" editable="false" labelFloat="true" layoutX="637.0" layoutY="28.0" prefHeight="32.0" prefWidth="143.0" promptText="Customer" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="cuttingamount" alignment="CENTER" editable="false" labelFloat="true" layoutX="20.0" layoutY="74.0" prefHeight="32.0" prefWidth="143.0" promptText="Cutting Amount" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="laundrydate" alignment="CENTER" editable="false" labelFloat="true" layoutX="225.0" layoutY="74.0" prefHeight="32.0" prefWidth="143.0" promptText="Incoming Date" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="washname" alignment="CENTER" editable="false" labelFloat="true" layoutX="855.0" layoutY="28.0" prefHeight="32.0" prefWidth="143.0" promptText="Wash Name" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="style" alignment="CENTER" editable="false" labelFloat="true" layoutX="430.0" layoutY="28.0" prefHeight="32.0" prefWidth="143.0" promptText="Style" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="poamount" alignment="CENTER" editable="false" labelFloat="true" layoutX="1073.0" layoutY="28.0" prefHeight="32.0" prefWidth="143.0" promptText="PO Amount" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField alignment="CENTER" editable="false" labelFloat="true" layoutX="430.0" layoutY="74.0" prefHeight="32.0" prefWidth="143.0" promptText="X Fac Date" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;" fx:id="xfacdate">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="qtosend" alignment="CENTER" labelFloat="true" layoutX="855.0" layoutY="74.0" onKeyReleased="#rekeyaction" onMouseClicked="#mouseclick" prefHeight="32.0" prefWidth="143.0" promptText="Quantity to send" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent; -fx-background-color: #0d1321; -fx-text-fill: white;" text="0" />
+                  <JFXTextField fx:id="received" alignment="CENTER" editable="false" labelFloat="true" layoutX="637.0" layoutY="74.0" prefHeight="32.0" prefWidth="143.0" promptText="Received" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="minusq" alignment="CENTER" editable="false" labelFloat="true" layoutX="1073.0" layoutY="74.0" prefHeight="32.0" prefWidth="143.0" promptText="Minus_Q" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;" text="0" />
+                  <JFXTextField fx:id="notes" alignment="CENTER" labelFloat="true" layoutX="294.0" layoutY="123.0" prefHeight="32.0" prefWidth="643.0" promptText="Notes" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent; -fx-background-color: ##4DA3FF;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="packing" alignment="CENTER" labelFloat="true" layoutX="19.0" layoutY="123.0" prefHeight="32.0" prefWidth="237.0" promptText="To Section" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent; -fx-background-color: ##4DA3FF;" text="PACKING" />
+                  <JFXTextField fx:id="seconddegree" alignment="CENTER" labelFloat="true" layoutX="977.0" layoutY="123.0" prefHeight="32.0" prefWidth="239.0" promptText="To Section" style="-fx-background-radius: 3em; -fx-font-weight: bold; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent; -fx-background-color: ##4DA3FF;" text="&quot;لسه في المغسلة&quot;" />
+               </children>
+            </Pane>
+            <JFXButton fx:id="setpath" buttonType="RAISED" onAction="#setpathaction" style="-fx-background-color: #4DA3FF; -fx-text-fill: black; -fx-font-weight: bold; -fx-background-radius: 3em;" text="أبعت للتعبئة حالا" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

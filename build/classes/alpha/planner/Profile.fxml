@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="544.0" prefWidth="388.0" style="-fx-font-family: &quot;Cairo SemiBold&quot;; -fx-font-weight: bold; -fx-font-size: 15;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="alpha.planner.ProfileController">
+   <children>
+      <Label fx:id="user" layoutX="173.0" layoutY="190.0" style="-fx-font-size: 16;" text="USER" />
+      <Label layoutX="77.0" layoutY="522.0" style="-fx-font-size: 12;" text="© 2025 Kadysoft Ltd. All Rights Reserved" />
+      <ImageView fitHeight="150.0" fitWidth="400.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cover.jpg" />
+         </image>
+      </ImageView>
+      <StackPane layoutX="162.0" layoutY="121.0" prefHeight="27.0" prefWidth="64.0">
+         <children>
+            <Circle fill="#d2dae1" radius="25.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="4.0" />
+            <ImageView fx:id="avatar" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow color="#00000066" radius="10" />
+               </effect>
+            </ImageView>
+         </children>
+      </StackPane>
+      <Label fx:id="section" layoutX="10.0" layoutY="121.0" style="-fx-font-size: 16;" text="SECTION" />
+      <JFXTextArea fx:id="info" editable="false" layoutX="8.0" layoutY="227.0" prefHeight="281.0" prefWidth="372.0" style="-jfx-focus-color: transparent; -jfx-unfocus-color: transparent; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black; -fx-border-width: 3;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,222 @@
+/*
+Created By Ahmed Elkady, Kadysoft Ltd.
+*/
+
+.refresh
+{
+-fx-graphic : url("refresh.png");
+}
+.update
+{
+-fx-graphic : url("update.png");
+}
+.addorder
+{
+-fx-graphic : url("addorder.png");
+}
+.filter
+{
+-fx-graphic : url("filter.png");
+}
+.delete
+{
+-fx-graphic : url("delete.png");
+}
+
+
+.bgggg
+{
+-fx-background-image : url("bg_3.jpg");
+}
+
+
+/* styles.css */
+.table-row-cell:filled:low-minus-lines {
+    -fx-background-color: #ffcccc;
+}
+
+
+.filoo
+{
+-fx-graphic : url("file.png");
+}
+
+.shipo
+{
+-fx-graphic : url("purchase-order.png");
+}
+
+.onlineo
+{
+-fx-graphic : url("read.png");
+}
+
+.helpo
+{
+-fx-graphic : url("helpdesk.png");
+}
+
+
+.settings
+{
+-fx-graphic : url("settings.png");
+}
+
+
+
+.spell
+{
+-fx-graphic : url("spell.png");
+}
+
+
+.refreshh
+{
+-fx-graphic : url("refreshh.png");
+}
+
+.deletee
+{
+-fx-graphic : url("deletee.png");
+}
+
+.filterr
+{
+-fx-graphic : url("filterr.png");
+}
+
+.updatee
+{
+-fx-graphic : url("updatee.png");
+}
+
+
+.processess
+{
+-fx-graphic : url("processess.png");
+}
+
+
+
+
+.autodelete
+{
+-fx-graphic : url("zero2.png");
+}
+
+
+
+
+.emoji
+{
+-fx-graphic : url("emoji.png");
+}
+
+
+
+.send
+{
+-fx-graphic : url("send.png");
+}
+
+
+.keyboard
+{
+-fx-graphic : url("keyboard.png");
+}
+
+
+
+.messenger
+{
+-fx-graphic : url("messenger.png");
+}
+
+
+
+.inbox
+{
+-fx-graphic : url("mail2.png");
+}
+
+
+
+.processo
+{
+-fx-graphic : url("guide-post.png");
+}
+
+
+
+
+
+.path
+{
+-fx-graphic : url("path.png");
+}
+
+
+.orders
+{
+-fx-graphic : url("orders.png");
+}
+
+
+.sending
+{
+-fx-graphic : url("sending.png");
+}
+
+
+.warehousee
+{
+-fx-graphic : url("warehousee.png");
+}
+
+
+
+
+
+.refresho
+{
+-fx-graphic : url("refresho.png");
+}
+
+
+.updato
+{
+-fx-graphic : url("updato.png");
+}
+
+
+.excelo
+{
+-fx-graphic : url("excelo.png");
+}
+
+
+
+.logouttt
+{
+-fx-graphic : url("logouttt.png");
+}
+
+
+
+.archive
+{
+-fx-graphic : url("archive.png");
+}
+
+
+.sidebar-icon {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, transparent, 0, 0, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.sidebar-icon:hover {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+    -fx-effect: dropshadow(gaussian, #4dabf7, 12, 0.6, 0, 0);
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="908.0" prefWidth="1248.0" style="-fx-font-weight: bold; -fx-font-family: &quot;Cairo SemiBold&quot;;" stylesheets="@cupertino-light.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.ProductionController">
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table" prefHeight="747.0" prefWidth="1248.0" tableMenuButtonVisible="true" />
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="1248.0" spacing="20.0">
+               <children>
+                  <JFXTextField fx:id="po" alignment="CENTER" editable="false" labelFloat="true" promptText="PO" style="-fx-background-radius: 3em; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="sapcode" alignment="CENTER" editable="false" labelFloat="true" layoutX="10.0" layoutY="10.0" promptText="Sap Code" style="-fx-background-radius: 3em; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="style" alignment="CENTER" editable="false" labelFloat="true" layoutX="203.0" layoutY="10.0" promptText="Style" style="-fx-background-radius: 3em; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="customer" alignment="CENTER" editable="false" labelFloat="true" layoutX="396.0" layoutY="10.0" promptText="Customer" style="-fx-background-radius: 3em; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="washname" alignment="CENTER" editable="false" labelFloat="true" layoutX="589.0" layoutY="10.0" promptText="Wash Name" style="-fx-background-radius: 3em; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="577.0" prefHeight="57.0" prefWidth="1248.0" spacing="20.0">
+               <children>
+                  <JFXTextField fx:id="received" alignment="CENTER" editable="false" labelFloat="true" promptText="Received" style="-fx-background-radius: 3em; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="finished" alignment="CENTER" labelFloat="true" layoutX="10.0" layoutY="10.0" onKeyReleased="#finkeyaction" onMouseClicked="#finmouseaction" prefHeight="32.0" prefWidth="290.0" promptText="Finished" style="-fx-background-radius: 3em; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+                  <JFXTextField fx:id="notfinished" alignment="CENTER" editable="false" labelFloat="true" layoutX="203.0" layoutY="10.0" promptText="Not Finished" style="-fx-background-radius: 3em; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                     <effect>
+                        <DropShadow height="0.0" radius="4.75" />
+                     </effect>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="58.0" prefWidth="1248.0" spacing="50.0">
+               <children>
+                  <JFXButton fx:id="export" buttonType="RAISED" layoutX="719.0" layoutY="19.0" onAction="#exportaction" prefHeight="32.0" prefWidth="155.0" style="-fx-background-radius: 3em; -fx-background-color: transparent; -fx-text-fill: white;" styleClass="excelo" stylesheets="@All_CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text="تصدير الي ملف أكسيل">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="refresh" buttonType="RAISED" layoutX="659.0" layoutY="19.0" onAction="#refreshaction" prefHeight="32.0" prefWidth="155.0" style="-fx-background-radius: 3em; -fx-background-color: transparent; -fx-text-fill: white;" styleClass="refresho" stylesheets="@All_CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text="تحديث بيانات الجدول">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="update" buttonType="RAISED" onAction="#updateaction" prefHeight="32.0" prefWidth="155.0" style="-fx-background-radius: 3em; -fx-background-color: transparent; -fx-text-fill: white;" styleClass="updato" stylesheets="@All_CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <tooltip>
+                        <Tooltip text="تحديث البيانات الي قاعدة البيانات">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="15.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip></JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

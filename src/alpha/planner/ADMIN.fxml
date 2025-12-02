@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane prefHeight="840.0" prefWidth="1313.0" style="-fx-font-family: 'Cairo SemiBold';" stylesheets="@cupertino-light.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.ADMINController">
+   <top>
+      <MenuBar fx:id="bar" prefHeight="32.0" prefWidth="1313.0" style="-fx-font-size: 15; -fx-font-weight: bold; -fx-background-radius: 0;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="filemenu" disable="true" mnemonicParsing="false" text="📝 File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newuseraction" text="➕👤 Add New User" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteuseraction" text="❌👤 Delete User" />
+                  <MenuItem mnemonicParsing="false" onAction="#trackuseraction" text="🛰👤 Track User" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#messengeraction" text="😀 Messenger" />
+                  <MenuItem fx:id="inbox" mnemonicParsing="false" onAction="#inboxaction" text="💬 Inbox" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#trackashipmentaction" text="📦🛰 Track A Shipment" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="audit" mnemonicParsing="false" onAction="#auditaction" text="📋✅ Show Audit" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#fixdataaction" text="🛠📊 Fix Data" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#settingsaction" text="⚙ Settings" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#viewlogsaction" text="📋 View Logs" />
+                  <MenuItem mnemonicParsing="false" onAction="#clearlogsaction" text="❌ Clear Logs" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#logoutaction" text="🚪↩ Log Out" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#exitaction" text="⏻ Exit" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="👑 Open Admin">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Write Password">
+                     <graphic>
+                        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="400.0" spacing="20.0">
+                           <children>
+                              <JFXPasswordField fx:id="pass" onKeyReleased="#enterraction" prefHeight="32.0" prefWidth="300.0" promptText="Write Password ..." style="-fx-font-weight: bold; -fx-background-radius: 3em; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent; -fx-background-color: #1e6091;" />
+                              <JFXButton fx:id="activate" buttonType="RAISED" onAction="#activateaction" style="-fx-font-weight: bold; -fx-background-radius: 3em; -fx-background-color: #1e6091;" text="Activate">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </MenuItem>
+              </items>
+            </Menu>
+            <Menu fx:id="onlineusersmenu" mnemonicParsing="false" text="🟢 Online Users" />
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" />
+            <SplitPane fx:id="mainSplit1" prefHeight="906.0" prefWidth="1025.0" style="-fx-background-color: #e9ecef;" visible="false">
+               <items>
+                  <VBox fx:id="sidePanel1" prefHeight="668.0" prefWidth="819.0" spacing="10" style="-fx-padding: 10;">
+                     <children>
+                        <Label layoutX="20.0" layoutY="820.0" style="-fx-font-weight: bold;" text="صندوق الرسائل" />
+                        <Label style="-fx-font-weight: bold;" text="خلي بالك اي رسالة هتوصلك هتفضل موجودة هنا لحد ما تقفل البرنامج او تسجل خروج كل حاجة هتختفي" />
+                        <ScrollPane fitToWidth="true" prefHeight="848.0" prefWidth="1005.0">
+                           <content>
+                              <VBox fx:id="shipmentList1" spacing="10" />
+                           </content>
+                        </ScrollPane>
+                        <HBox spacing="10">
+                           <children>
+                              <Button onAction="#closepanel" style="-fx-background-color: #3c096c; -fx-text-fill: white; -fx-background-radius: 3em; -fx-font-weight: bold;" text="اغلاق">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </items>
+            </SplitPane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

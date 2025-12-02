@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="174.0" prefWidth="419.0" style="-fx-font-family: 'Cairo SemiBold';" stylesheets="@cupertino-light.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.DeleteUserController">
+   <children>
+      <ComboBox fx:id="selectuser" layoutX="70.0" layoutY="25.0" onHidden="#positionaction" prefHeight="35.0" prefWidth="280.0" promptText="Select Section" style="-fx-background-radius: 3em; -fx-font-size: 13; -fx-font-weight: bold;" />
+      <JFXButton fx:id="deletebtn" buttonType="RAISED" layoutX="167.0" layoutY="125.0" onAction="#deletebtnaction" prefHeight="35.0" prefWidth="86.0" style="-fx-background-color: #ffc300; -fx-background-radius: 3em; -fx-text-fill: black;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <ComboBox fx:id="selectuser1" layoutX="70.0" layoutY="70.0" prefHeight="35.0" prefWidth="280.0" promptText="Select User" style="-fx-background-radius: 3em; -fx-font-size: 13; -fx-font-weight: bold;" />
+   </children>
+</AnchorPane>

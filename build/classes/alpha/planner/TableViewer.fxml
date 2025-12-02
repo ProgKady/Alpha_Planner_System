@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="884.0" prefWidth="1315.0" style="-fx-font-family: &quot;Cairo SemiBold&quot;;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.TableViewerController">
+   <center>
+      <TableView fx:id="table" editable="true" prefHeight="200.0" prefWidth="200.0" stylesheets="@cupertino-light.css" tableMenuButtonVisible="true" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

@@ -1,0 +1,70 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 13, 2025, 10:33:44 AM
+    Author     : ahmed.elkady
+*/
+
+.card-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 10;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8,0,0,2);
+}
+
+/* زر أساسي */
+.primary-btn {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 6 14;
+}
+.primary-btn:hover {
+    -fx-scale-x: 1.07;
+    -fx-scale-y: 1.07;
+    -fx-effect: dropshadow(gaussian, #90caf9, 10, 0, 0, 0);
+}
+
+/* زر نجاح */
+.success-btn {
+    -fx-background-color: #1dd3b0;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}
+.success-btn:hover {
+    -fx-scale-x: 1.07;
+    -fx-scale-y: 1.07;
+    -fx-effect: dropshadow(gaussian, #a7f3d0, 10, 0, 0, 0);
+}
+
+/* زر تحذير */
+.warning-btn {
+    -fx-background-color: #f4acb7;
+    -fx-text-fill: black;
+    -fx-background-radius: 8;
+}
+.warning-btn:hover {
+    -fx-scale-x: 1.07;
+    -fx-scale-y: 1.07;
+    -fx-effect: dropshadow(gaussian, #ffc8dd, 10, 0, 0, 0);
+}
+
+/* زر خطر */
+.danger-btn {
+    -fx-background-color: #e63946;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}
+.danger-btn:hover {
+    -fx-scale-x: 1.07;
+    -fx-scale-y: 1.07;
+    -fx-effect: dropshadow(gaussian, #f08080, 10, 0, 0, 0);
+}
+.jfx-list-cell {
+    -fx-cell-size: 28px;   /* default row height */
+    -fx-padding: 6 10;
+    -fx-alignment: center-left;
+}

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="821.0" prefWidth="1303.0" style="-fx-font-family: &quot;Cairo SemiBold&quot;;" stylesheets="@cupertino-light.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.Alpha_PlannerController">
+   <top>
+      <MenuBar fx:id="menubar" style="-fx-font-weight: bold;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="📝 File">
+            <items>
+                  <MenuItem fx:id="refresh" mnemonicParsing="false" onAction="#refreshaction" text="🔄 Refresh Orders" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="addorder" mnemonicParsing="false" onAction="#addorderaction" text="➕ Add Order" />
+                  <MenuItem fx:id="updateorder" mnemonicParsing="false" onAction="#editorderaction" text="♻ Update Orders" />
+                  <MenuItem fx:id="deleteorder" mnemonicParsing="false" onAction="#deleteorderaction" text="🗑 Delete Order" />
+                  <SeparatorMenuItem mnemonicParsing="false" visible="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#showgarmentdetailsaction" text="Show Garment Details" visible="false" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#bonusaction" text="🎁 Bonus" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#settingsaction" text="⚙ Settings" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="📤 Export To ...">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#pdfaction" text="📄 PDF" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#excelaction" text="📊 Excel" />
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#quitaction" text="⏻ Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="❓Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#creditsaction" text="🙏 Credits" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#aboutaction" text="ℹ About" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#logoutaction" style="-fx-background-color: red;" text="🚪 Log Out" />
+            </items>
+          </Menu>
+            <Menu fx:id="onlineusersmenu" mnemonicParsing="false" text="🌐 Online Users" />
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <ToolBar fx:id="buttonbar" prefHeight="40.0" prefWidth="1275.0" BorderPane.alignment="CENTER">
+               <items>
+                  <JFXButton fx:id="clearsel" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#clearselectionaction" style="-fx-background-radius: 3em; -fx-background-color: #bc4749; -fx-font-weight: bold;" text="❌">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                  <JFXTextField fx:id="sapcode1" layoutX="277.0" layoutY="10.0" prefHeight="32.0" prefWidth="18.0" visible="false" />
+                  <JFXButton fx:id="plansel" buttonType="RAISED" onAction="#planselectedaction" style="-fx-background-radius: 3em; -fx-background-color: #6a994e; -fx-font-weight: bold;" text="📅">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                  <JFXTextField fx:id="po" prefHeight="32.0" prefWidth="77.0" visible="false" />
+                  <JFXTextField fx:id="linenumber" alignment="CENTER" prefHeight="32.0" prefWidth="98.0" style="-fx-font-weight: bold;" text="1" />
+                  <JFXTextField fx:id="sapcode" layoutX="252.0" layoutY="10.0" prefHeight="29.0" prefWidth="79.0" visible="false" />
+                  <Label style="-fx-font-weight: bold;" text="Planned Orders" />
+                  <JFXTextField fx:id="style" layoutX="437.0" layoutY="10.0" prefHeight="32.0" prefWidth="61.0" visible="false" />
+                  <Label fx:id="plannedorders" layoutX="552.0" layoutY="27.0" style="-fx-font-weight: bold;" text="0" />
+                  <JFXTextField fx:id="customer" layoutX="622.0" layoutY="10.0" prefHeight="32.0" prefWidth="70.0" visible="false" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="29.0" />
+                  <JFXTextField fx:id="washname" layoutX="807.0" layoutY="10.0" prefHeight="32.0" prefWidth="75.0" visible="false" />
+                  <Label layoutX="552.0" layoutY="27.0" style="-fx-font-weight: bold;" text="Skipped Orders" />
+                  <JFXTextField fx:id="poamount" layoutX="555.0" layoutY="10.0" prefHeight="32.0" prefWidth="75.0" visible="false" />
+                  <Label fx:id="skippedorders" layoutX="769.0" layoutY="27.0" style="-fx-font-weight: bold;" text="0" />
+                  <JFXTextField fx:id="cuttingamount" layoutX="634.0" layoutY="10.0" prefHeight="32.0" prefWidth="75.0" visible="false" />
+                  <JFXTextField fx:id="laundrydate" layoutX="713.0" layoutY="10.0" prefHeight="32.0" prefWidth="75.0" visible="false" />
+                  <JFXTextField layoutX="792.0" layoutY="10.0" prefHeight="32.0" prefWidth="220.0" visible="false" fx:id="xfacdate" />
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="29.0" />
+                  <Label fx:id="ref" layoutX="871.0" layoutY="16.0" onMouseClicked="#refaction" prefHeight="30.0" prefWidth="29.0" styleClass="refresh" stylesheets="@All_CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="29.0" />
+                  <Label fx:id="upd" layoutX="987.0" layoutY="16.0" onMouseClicked="#updaction" styleClass="update" stylesheets="@All_CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="29.0" />
+                  <Label fx:id="add" layoutX="1024.0" layoutY="16.0" onMouseClicked="#addaction" styleClass="addorder" stylesheets="@All_CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="29.0" />
+                  <Label fx:id="fil" layoutX="1061.0" layoutY="16.0" onMouseClicked="#filaction" styleClass="filter" stylesheets="@All_CSS.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="29.0" />
+                  <Label fx:id="del" onMouseClicked="#delaction" styleClass="delete" stylesheets="@All_CSS.css" visible="false">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </items>
+            </ToolBar>
+         </top>
+         <right>
+            <StackPane prefHeight="678.0" prefWidth="48.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="rightarrow" fitHeight="39.0" fitWidth="34.0" onMouseClicked="#rightarrowaction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@rightarrow.gif" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fx:id="leftarrow" fitHeight="39.0" fitWidth="34.0" onMouseClicked="#leftarrowaction" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@leftarrow.gif" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </right>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="table" onMouseClicked="#tableaction" prefHeight="664.0" prefWidth="1229.0" style="-fx-font-weight: bold; -fx-font-size: 13px;" tableMenuButtonVisible="true" />
+                  <TableView fx:id="table2" prefHeight="663.0" prefWidth="1228.0" style="-fx-font-weight: bold; -fx-font-size: 13px;" tableMenuButtonVisible="true" visible="false" />
+               </children>
+            </StackPane>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="1303.0" spacing="25.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label style="-fx-font-weight: bold;" text="Choosed Orders" />
+                  <Label fx:id="choosedorders" style="-fx-font-weight: bold;" text="0" />
+                  <JFXTextArea fx:id="orderarea" prefHeight="14.0" prefWidth="10.0" visible="false" />
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </center>
+</BorderPane>

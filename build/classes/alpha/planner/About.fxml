@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="720.0" prefWidth="820.0" style="-fx-background-color: #f9f9f9; -fx-font-family: 'Cairo SemiBold';" stylesheets="@cupertino-light.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.AboutController">
+
+    <children>
+        <!-- Main Vertical Layout -->
+        <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="820.0" spacing="20" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+            
+            <!-- Logo -->
+            <StackPane>
+                <ImageView fitHeight="140.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@kadysoft.png" />
+                    </image>
+                </ImageView>
+            </StackPane>
+
+            <!-- Title -->
+            <Label style="-fx-font-size: 20px; -fx-text-fill: #003049; -fx-font-weight: bold;" text="About This Program" />
+
+            <!-- English About Card -->
+            <StackPane style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1),10,0,0,3);">
+                <JFXTextArea editable="false" style="-fx-font-size: 13px; -fx-text-fill: #333333; -fx-background-color: transparent;" text="This software was specially developed for the Laundry Section at T&amp;C Garments, with the goal of making planning faster, smarter, and more efficient. I poured my best effort and dedication into building this tool, aiming to offer a solution that aligns with your real needs. Every feature was designed with care, usability, and love — to make your daily workflow smoother. I extend my deepest thanks to the Planning Department, especially Mostafa Ramadan, whose valuable input and ongoing support helped shape and refine the system. I hope this program proves helpful to everyone and contributes to a more organized and productive work environment." wrapText="true" />
+            </StackPane>
+
+            <!-- Arabic Title -->
+            <Label style="-fx-font-size: 20px; -fx-text-fill: #003049; -fx-font-weight: bold;" text="حول هذا البرنامج" />
+
+            <!-- Arabic About Card -->
+            <StackPane style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1),10,0,0,3);">
+                <JFXTextArea editable="false" style="-fx-font-size: 13px; -fx-text-fill: #333333; -fx-font-family: 'Cairo SemiBold'; -fx-background-color: transparent;" text="تم تطوير هذا البرنامج خصيصًا لقسم الغسيل في شركة T&amp;C Garments، بهدف تسهيل التخطيط وتسريعه وجعله أكثر كفاءة ومرونة. بذلت أقصى جهدي في تصميم هذا النظام، ليعكس الاحتياجات الواقعية للقسم، وتم تنفيذ جميع الميزات بحُب وحرص شديد على تسهيل سير العمل اليومي. أتوجه بالشكر والتقدير إلى فريق التخطيط، وبشكل خاص إلى الأستاذ مصطفى رمضان، الذي ساعدني كثيرًا بملاحظاته ومساهماته القيّمة في تحسين أداء البرنامج ليكون أكثر فائدة للجميع. آمل أن يسهم هذا العمل في تيسير المهام اليومية وتحقيق بيئة عمل أكثر تنظيمًا وإنتاجية." wrapText="true" />
+            </StackPane>
+
+            <!-- Footer -->
+            <HBox alignment="CENTER" style="-fx-padding: 10;">
+                <Label style="-fx-text-fill: #666666; -fx-font-size: 12px;" text="© 2025 Kadysoft Ltd. All Rights Reserved">
+                    <effect>
+                        <DropShadow color="#c3c3c3" spread="0.2" />
+                    </effect>
+                </Label>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

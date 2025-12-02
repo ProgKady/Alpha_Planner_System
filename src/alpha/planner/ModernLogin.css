@@ -1,0 +1,33 @@
+/* ModernLogin.css */
+.root {
+    -fx-font-family: "Roboto";
+}
+
+.jfx-button:hover {
+    -fx-background-color: linear-gradient(to right, #1e3a8a, #3b82f6);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #1f2937;
+    -fx-background-color: #f3f4f6;
+    -fx-background-radius: 10;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: #e5e7eb;
+}
+
+.jfx-password-field .text-field {
+    -fx-background-color: #f3f4f6;
+    -fx-background-radius: 10;
+    -fx-text-fill: #1f2937;
+}
+
+.jfx-password-field:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #3b82f6;
+    -fx-border-radius: 10;
+}

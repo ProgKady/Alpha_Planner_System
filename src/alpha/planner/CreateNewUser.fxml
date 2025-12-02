@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="787.0" prefWidth="600.0" style="-fx-font-family: 'Cairo SemiBold';" stylesheets="@cupertino-light.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.CreateNewUserController">
+   <children>
+      <ComboBox fx:id="selectposition" layoutX="248.0" layoutY="136.0" prefHeight="28.0" prefWidth="253.0" promptText="Select A Position ..." style="-fx-background-radius: 3em; -fx-font-size: 15; -fx-font-weight: bold;" />
+      <JFXTextField fx:id="addname" alignment="CENTER" labelFloat="true" layoutX="248.0" layoutY="214.0" prefHeight="28.0" prefWidth="253.0" promptText="Type Your Username Here ..." style="-fx-background-radius: 3em;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></JFXTextField>
+      <JFXPasswordField fx:id="addpassword" alignment="CENTER" labelFloat="true" layoutX="248.0" layoutY="294.0" prefHeight="28.0" prefWidth="253.0" promptText="Type Your Password Here ..." style="-fx-background-radius: 3em;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></JFXPasswordField>
+      <ComboBox fx:id="selectquestion" layoutX="248.0" layoutY="371.0" onHidden="#selectquestionaction" prefHeight="28.0" prefWidth="253.0" promptText="Choose A Question ..." style="-fx-background-radius: 3em; -fx-font-size: 15; -fx-font-weight: bold;" />
+      <JFXTextField fx:id="answer" alignment="CENTER" disable="true" labelFloat="true" layoutX="248.0" layoutY="447.0" prefHeight="28.0" prefWidth="253.0" promptText="Type Your Answer Here ..." style="-fx-background-radius: 3em;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="signup" buttonType="RAISED" disable="true" layoutX="248.0" layoutY="740.0" onAction="#signupaction" prefHeight="33.0" prefWidth="105.0" style="-fx-background-color: green; -fx-background-radius: 3em;" text="Sign Up">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></JFXButton>
+      <Label layoutX="94.0" layoutY="144.0" text="Select Position" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="105.0" layoutY="222.0" text="Add Name" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="94.0" layoutY="302.0" text="Add Password" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="87.0" layoutY="379.0" text="Select a question" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="455.0" text="Answer Here" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="avatar" fitHeight="85.0" fitWidth="96.0" layoutX="258.0" layoutY="14.0" onMouseClicked="#avataraction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@user.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <JFXTextArea fx:id="bio" labelFloat="true" layoutX="21.0" layoutY="495.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#bioaction" prefHeight="227.0" prefWidth="558.0" promptText="User Bio" style="-fx-font-weight: bold; -fx-font-size: 15;" text="&quot;أنا فلان، شغال في قسم كذا، واحد بسيط بحب شغلي وبسعى أتعلم كل يوم حاجة جديدة. شايف إن الطموح هو السكة اللي بتوصل للنجاح، ومهما كانت الظروف صعبة الواحد لازم يفضل مكمل. بحلم أحقق إنجازات تخليني أفتخر بيها قدام نفسي وأهلي. اللي يعرفني عارف إني بحب التعاون والضحكة الحلوة، وأي فرصة قدامي بحاول أستغلها للآخر. النجاح بالنسبالي مش بس شغل، النجاح إنك تعيش حياتك برضا وفرحة.&quot;" />
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

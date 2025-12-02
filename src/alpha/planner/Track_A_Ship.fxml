@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="864.0" prefWidth="1062.0" style="-fx-font-family: &quot;Cairo SemiBold&quot;;" stylesheets="@cupertino-light.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.Track_A_ShipController">
+   <children>
+      <TableView fx:id="table" layoutX="29.0" layoutY="132.0" prefHeight="673.0" prefWidth="1000.0" tableMenuButtonVisible="true" />
+      <JFXButton buttonType="RAISED" layoutX="501.0" layoutY="84.0" onAction="#trackaction" style="-fx-background-radius: 3em; -fx-background-color: #1e6091; -fx-font-weight: bold; -fx-text-fill: white;" text="Track" />
+      <JFXButton buttonType="RAISED" layoutX="498.0" layoutY="818.0" onAction="#exportaction" style="-fx-background-radius: 3em; -fx-background-color: #1e6091; -fx-font-weight: bold; -fx-text-fill: white;" text="Export" />
+      <JFXTextField fx:id="poo" alignment="CENTER" labelFloat="true" layoutX="365.0" layoutY="23.0" prefHeight="39.0" prefWidth="333.0" promptText="Write KeyWord" style="-fx-background-radius: 3em; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent; -fx-font-weight: bold;">
+         <effect>
+            <DropShadow height="0.0" radius="4.75" />
+         </effect>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="37.0" layoutY="818.0" onAction="#viewmapaction" style="-fx-background-radius: 3em; -fx-background-color: #1e6091; -fx-font-weight: bold; -fx-text-fill: white;" text="View Map" />
+   </children>
+</AnchorPane>

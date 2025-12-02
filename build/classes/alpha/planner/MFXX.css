@@ -1,0 +1,133 @@
+/* 
+    Created on : Aug 13, 2025, 9:58:54 AM
+    Author     : ahmed.elkady
+*/
+
+/* ==============================
+   MFX TextFields & PasswordFields
+   ============================== */
+.mfx-text-field,
+.mfx-password-field {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #444;
+    -fx-border-width: 1;
+}
+
+.mfx-text-field:focused,
+.mfx-password-field:focused {
+    -fx-border-color: #4da3ff;
+    -fx-background-color: #333333;
+}
+
+.mfx-text-field .text-field,
+.mfx-password-field .text-field {
+    -fx-prompt-text-fill: #aaaaaa;
+}
+
+/* ==============================
+   MFX DatePicker Field
+   ============================== */
+.mfx-date-picker {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #444;
+    -fx-border-width: 1;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+.mfx-date-picker:focused {
+    -fx-border-color: #4da3ff;
+    -fx-background-color: #333333;
+}
+
+.mfx-date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #aaaaaa;
+}
+
+/* ==============================
+   MFX DatePicker Popup & Calendar
+   ============================== */
+.mfx-date-picker-popup,
+.mfx-calendar-view {
+    -fx-background-color: #2b2b2b;
+    -fx-border-color: #444;
+    -fx-border-width: 1;
+}
+
+/* Header (Month-Year display) */
+.mfx-date-picker-popup .header,
+.mfx-calendar-view .header {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: white;
+}
+
+/* Navigation buttons */
+.mfx-date-picker-popup .header .button,
+.mfx-calendar-view .header .mfx-icon-wrapper {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.mfx-date-picker-popup .header .button:hover,
+.mfx-calendar-view .header .mfx-icon-wrapper:hover {
+    -fx-background-color: #444;
+}
+
+/* Day cells */
+.mfx-date-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.mfx-date-cell:hover {
+    -fx-background-color: #444;
+}
+
+.mfx-date-cell:selected {
+    -fx-background-color: #4da3ff;
+    -fx-text-fill: white;
+}
+
+.mfx-date-cell.today {
+    -fx-background-color: #666;
+    -fx-text-fill: white;
+}
+
+/* Month/Year selection panel */
+.mfx-month-year-view {
+    -fx-background-color: #2b2b2b;
+}
+
+.mfx-month-year-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.mfx-month-year-cell:hover {
+    -fx-background-color: #444;
+}
+
+/* ==============================
+   MFX Buttons
+   ============================== */
+.mfx-button {
+    -fx-background-color: #2b2b2b;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #444;
+    -fx-border-width: 1;
+}
+
+.mfx-button:hover {
+    -fx-background-color: #333333;
+}
+
+.mfx-button:pressed {
+    -fx-background-color: #4da3ff;
+}

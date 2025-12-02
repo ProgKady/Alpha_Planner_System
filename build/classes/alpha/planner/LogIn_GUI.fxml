@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="774.0" prefWidth="907.0" style="-fx-background-color: linear-gradient(to bottom right, #e3eaf7, #cfd6e6); -fx-font-family: &quot;Cairo SemiBold&quot;;" stylesheets="@All_CSS.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alpha.planner.LogIn_GUI_Controller">
+
+   <children>
+      <!-- Main Logo with glow -->
+      <ImageView fitHeight="130.0" fitWidth="200.0" layoutX="397.0" layoutY="23.0" preserveRatio="true">
+         <image>
+            <Image url="@zzCZ.png" />
+         </image>
+         <effect>
+            <DropShadow color="#0d6efd66" radius="25" />
+         </effect>
+      </ImageView>
+
+      <!-- Title -->
+      <Label layoutX="333.0" layoutY="153.0" style="-fx-font-size: 26; -fx-font-family: 'Cairo SemiBold'; -fx-text-fill: #2b2e4a;" text="اهلا بيك من تاني 🔐" />
+
+      <!-- Position Combo -->
+      <ComboBox fx:id="positionbox" layoutX="267.0" layoutY="276.0" onHidden="#positionaction" onKeyReleased="#pospos" prefHeight="50.0" prefWidth="391.0" promptText="اختار قسم 🏢" style="-fx-background-radius: 14; -fx-font-size: 15; -fx-font-weight: bold; -fx-background-color: #e1e1e1; -fx-text-fill: #2b2e4a;">
+         <effect>
+            <DropShadow color="#0d6efd33" radius="12" />
+         </effect>
+      </ComboBox>
+
+      <!-- Username Combo -->
+      <ComboBox fx:id="namefield" layoutX="266.0" layoutY="403.0" prefHeight="50.0" prefWidth="391.0" promptText="اختار مستخدم 👤" style="-fx-background-radius: 14; -fx-font-size: 15; -fx-font-weight: bold; -fx-background-color: #e1e1e1; -fx-text-fill: #2b2e4a;">
+         <effect>
+            <DropShadow color="#0d6efd33" radius="12" />
+         </effect>
+      </ComboBox>
+
+      <!-- Password -->
+      <JFXPasswordField fx:id="passwordfield" labelFloat="true" layoutX="267.0" layoutY="525.0" onKeyPressed="#enterpasswordkeypressed" prefHeight="50.0" prefWidth="391.0" promptText="اكتب الباسورد 🔑" style="-fx-background-radius: 14; -fx-border-radius: 14; -jfx-focus-color: #0d6efd; -jfx-unfocus-color: transparent; -fx-background-color: #f1f3f6; -fx-text-fill: #2b2e4a;">
+         <font>
+            <Font name="Segoe UI Bold" size="15.0" />
+         </font>
+         <effect>
+            <DropShadow color="#0d6efd33" radius="12" />
+         </effect>
+      </JFXPasswordField>
+
+      <!-- Login Button -->
+      <JFXButton fx:id="loginbtn" buttonType="RAISED" layoutX="369.0" layoutY="663.0" onAction="#loginbtnaction" prefHeight="55.0" prefWidth="185.0" style="-fx-background-radius: 28; -fx-background-color: #0d6efd; -fx-text-fill: white; -fx-font-weight: bold;" text="تسجيل الدخول 🚀">
+         <font>
+            <Font name="Segoe UI Semibold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow color="#0d6efd55" radius="20" />
+         </effect>
+      </JFXButton>
+
+      <!-- Rights -->
+      <Label layoutX="380.0" layoutY="735.0" style="-fx-font-family: 'Segoe UI'; -fx-font-size: 12; -fx-text-fill: #6c757d;" text="© Kadysoft. All rights reserved." />
+
+      <!-- Small decorative icons -->
+      <Label layoutX="554.0" layoutY="726.0" style="-fx-font-size: 22; -fx-opacity: 0.8;" text="✨" />
+      <Label layoutX="565.0" layoutY="156.0" style="-fx-font-size: 22; -fx-opacity: 0.8;" text="💡" />
+
+   </children>
+</Pane>
