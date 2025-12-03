@@ -665,15 +665,29 @@ private void showStep(StackPane root, Scene scene) {
     info.setWrapText(true);
     info.setMaxWidth(300);
     info.setStyle(
-            "-fx-background-color: white; " +
-            "-fx-padding: 15; " +
-            "-fx-font-size: 16px; " +
-            "-fx-font-weight: bold; " +
-            "-fx-background-radius: 12; " +
-            "-fx-border-radius: 12; " +
-            "-fx-border-color: #E0E0E0;" +
-            "-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 8, 0, 0, 2);"
-    );
+        "-fx-background-color: linear-gradient(to bottom right, #ff7eb9, #ff758c, #ff3c7e);" + // تدرج خيالي
+        "-fx-padding: 18 25 18 25;" + // padding أكبر للتأثير
+        "-fx-font-size: 18px;" +
+        "-fx-font-weight: bold;" +
+        "-fx-text-fill: white;" + // لون النص أبيض
+        "-fx-background-radius: 30 5 30 5;" + // حواف غير متماثلة لإحساس فني
+        "-fx-border-radius: 30 5 30 5;" +
+        "-fx-border-width: 2;" +
+        "-fx-border-color: rgba(255,255,255,0.5);" + // حدود شبه شفافة
+        "-fx-effect: dropshadow(gaussian, rgba(255,255,255,0.4), 15, 0.5, 0, 0)," +
+                      " innershadow(gaussian, rgba(0,0,0,0.25), 6, 0.5, 0, 2);" // تداخل ظل خارجي وداخلي
+);
+
+//    info.setStyle(
+//            "-fx-background-color: white; " +
+//            "-fx-padding: 15; " +
+//            "-fx-font-size: 16px; " +
+//            "-fx-font-weight: bold; " +
+//            "-fx-background-radius: 12; " +
+//            "-fx-border-radius: 12; " +
+//            "-fx-border-color: #E0E0E0;" +
+//            "-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 8, 0, 0, 2);"
+//    );
 
     javafx.scene.control.Button nextBtn = new javafx.scene.control.Button(
             currentStep == steps.size() - 1 ? "انهاء" : "التالي →"
@@ -692,6 +706,7 @@ private void showStep(StackPane root, Scene scene) {
     });
 
     VBox card = new VBox(10, info, nextBtn, skipBtn);
+    card.setStyle("-fx-font-family:'Cairo SemiBold';");
     card.setAlignment(Pos.CENTER);
 
     overlayPane.getChildren().addAll(background, highlight, card);
